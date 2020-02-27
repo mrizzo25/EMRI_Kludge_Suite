@@ -460,8 +460,8 @@ void waveform(double *t, double *hI, double *hII, double timestep, int vlength, 
       FcrosII=cosq1*sin2phi*sin2psi-cosq*cos2phi*cos2psi;
     }
     else{
-      double up_ldc = (cosqS*sinqK*cos(phiS-phiK) - cosqK*sinqS);
-   	  double dw_ldc = (sinqK*sin(phiS-phiK));
+	/*double up_ldc = (cosqS*sinqK*cos(phiS-phiK) - cosqK*sinqS);
+   	 double dw_ldc = (sinqK*sin(phiS-phiK));
    	  double psi_ldc;
    	  if (dw_ldc != 0.0) {
    		psi_ldc = -atan2(up_ldc, dw_ldc);
@@ -475,7 +475,7 @@ void waveform(double *t, double *hI, double *hII, double timestep, int vlength, 
       FplusI=c2psi_ldc;
       FcrosI=-s2psi_ldc;
       FplusII=s2psi_ldc;
-      FcrosII=c2psi_ldc;
+      FcrosII=c2psi_ldc; */
     }
     
     double Amp=pow(OmegaPhi(v,e,coslam,S,M)*M_phys*SOLARMASSINSEC,2./3.)*zeta;
@@ -518,8 +518,8 @@ void waveform(double *t, double *hI, double *hII, double timestep, int vlength, 
         hnII=halfsqrt3*(FplusII*Aplus+FcrosII*Acros);
       }
       else{
-      	hnI=FplusI*Aplus+FcrosI*Acros;
-        hnII=FplusII*Aplus+FcrosII*Acros;
+	hnI=Aplus;
+        hnII=Acros;
       }
 
       hI[i]+=hnI;
